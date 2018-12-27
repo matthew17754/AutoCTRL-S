@@ -37,7 +37,8 @@ namespace AutoCTRL_S
 
         void settings(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            this.Show();
+            WindowState = FormWindowState.Normal;
             saveTimer.Stop();
         }
 
@@ -55,8 +56,12 @@ namespace AutoCTRL_S
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
+            trayIcon.BalloonTipTitle = "Some";
+            trayIcon.BalloonTipText = "Some Notification";
+            trayIcon.Text = "Application Name";
+
+            //this.WindowState = FormWindowState.Minimized;
+            //this.ShowInTaskbar = false;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -98,14 +103,27 @@ namespace AutoCTRL_S
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default["MinInterval"] = numericUpDown1.Value;
-            Properties.Settings.Default.Save();
-            Properties.Settings.Default["Startup"] = chkStartUp.Checked;
-            Properties.Settings.Default.Save();
-            Properties.Settings.Default["Notification"] = chkNotification.Checked;
-            Properties.Settings.Default.Save(); // Saves settings in application configuration file
+            //Properties.Settings.Default["MinInterval"] = numericUpDown1.Value;
+            //Properties.Settings.Default.Save();
+            //Properties.Settings.Default["Startup"] = chkStartUp.Checked;
+            //Properties.Settings.Default.Save();
+            //Properties.Settings.Default["Notification"] = chkNotification.Checked;
+            //Properties.Settings.Default.Save(); // Saves settings in application configuration file
+
             startSaveTimer();
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void SaveManager_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                trayIcon.Visible = true;
+                trayIcon.ShowBalloonTip(1000);
+            }
+            else if (FormWindowState.Normal == this.WindowState)
+            { trayIcon.Visible = false; }
         }
     }
 }

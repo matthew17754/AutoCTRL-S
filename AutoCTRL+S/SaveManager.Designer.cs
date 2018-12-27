@@ -146,10 +146,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SaveManager";
-            this.ShowInTaskbar = false;
             this.Text = "AutoCTRL+S Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SaveManager_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.SaveManager_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
