@@ -93,6 +93,7 @@
             this.chkNotification.TabIndex = 4;
             this.chkNotification.Text = "Play Sound Notification On Save";
             this.chkNotification.UseVisualStyleBackColor = true;
+            this.chkNotification.CheckedChanged += new System.EventHandler(this.chkNotification_CheckedChanged);
             // 
             // pictureBox1
             // 

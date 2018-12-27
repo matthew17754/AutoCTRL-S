@@ -11,6 +11,7 @@ namespace AutoCTRL_S
     {
         private NotifyIcon trayIcon;
         public System.Timers.Timer saveTimer;
+        public Boolean checkSound = false;
 
         public SaveManager()
         {
@@ -42,23 +43,31 @@ namespace AutoCTRL_S
             saveTimer.Stop();
         }
 
-    private void startSaveTimer()
+        private void startSaveTimer()
         {
             saveTimer = new System.Timers.Timer((double)numericUpDown1.Value * 60000);
             saveTimer.Elapsed += saveTimer_Elapsed;
             saveTimer.Start();
         }
 
+        private void chkNotification_CheckedChanged(object sender, EventArgs e)
+        {
+            checkSound = true;
+        }
+
         private void saveTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             SendKeys.SendWait("^(s)");
+
+            if (checkSound) {System.Media.SystemSounds.Exclamation.Play();}
+            else {}
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            trayIcon.BalloonTipTitle = "Some";
-            trayIcon.BalloonTipText = "Some Notification";
-            trayIcon.Text = "Application Name";
+            trayIcon.BalloonTipTitle = "AutoCTRL+S";
+            trayIcon.BalloonTipText = "Minimized To System Tray";
+            trayIcon.Text = "AutoCTRL+S";
 
             //this.WindowState = FormWindowState.Minimized;
             //this.ShowInTaskbar = false;
@@ -120,7 +129,7 @@ namespace AutoCTRL_S
             {
                 this.Hide();
                 trayIcon.Visible = true;
-                trayIcon.ShowBalloonTip(1000);
+                trayIcon.ShowBalloonTip(100);
             }
             else if (FormWindowState.Normal == this.WindowState)
             { trayIcon.Visible = false; }
