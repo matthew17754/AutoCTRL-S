@@ -26,6 +26,13 @@ namespace AutoCTRL_S
             }),
                 Visible = true
             };
+            trayIcon.MouseClick += new MouseEventHandler(trayIcon_IconClicked);
+        }
+
+        private void trayIcon_IconClicked(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            WindowState = FormWindowState.Normal;
         }
 
         void exit(object sender, EventArgs e)
