@@ -87,6 +87,8 @@ namespace AutoCTRL_S
 
         private void SaveManager_FormClosing(object sender, FormClosingEventArgs e)
         {
+            trayIcon.BalloonTipText = "Autosave Terminated";
+            trayIcon.ShowBalloonTip(100);
             trayIcon.Visible = false;
         }
 
