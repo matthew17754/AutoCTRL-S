@@ -32,11 +32,11 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chkStartUp = new System.Windows.Forms.CheckBox();
             this.chkNotification = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.chkNotify = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,17 +73,6 @@
             this.label2.Text = "Moradi Software Solutions";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // chkStartUp
-            // 
-            this.chkStartUp.AutoSize = true;
-            this.chkStartUp.Location = new System.Drawing.Point(15, 50);
-            this.chkStartUp.Name = "chkStartUp";
-            this.chkStartUp.Size = new System.Drawing.Size(168, 17);
-            this.chkStartUp.TabIndex = 3;
-            this.chkStartUp.Text = "Launch Application On Starup";
-            this.chkStartUp.UseVisualStyleBackColor = true;
-            this.chkStartUp.CheckedChanged += new System.EventHandler(this.chkStartUp_CheckedChanged);
-            // 
             // chkNotification
             // 
             this.chkNotification.AutoSize = true;
@@ -93,7 +82,6 @@
             this.chkNotification.TabIndex = 4;
             this.chkNotification.Text = "Play Sound Notification On Save";
             this.chkNotification.UseVisualStyleBackColor = true;
-            this.chkNotification.CheckedChanged += new System.EventHandler(this.chkNotification_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -129,16 +117,26 @@
             this.label3.Text = "View On GitHub";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // chkNotify
+            // 
+            this.chkNotify.AutoSize = true;
+            this.chkNotify.Location = new System.Drawing.Point(15, 50);
+            this.chkNotify.Name = "chkNotify";
+            this.chkNotify.Size = new System.Drawing.Size(154, 17);
+            this.chkNotify.TabIndex = 9;
+            this.chkNotify.Text = "Show Notification On Save";
+            this.chkNotify.UseVisualStyleBackColor = true;
+            // 
             // SaveManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(221, 184);
+            this.Controls.Add(this.chkNotify);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chkNotification);
-            this.Controls.Add(this.chkStartUp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown1);
@@ -163,11 +161,11 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chkStartUp;
         private System.Windows.Forms.CheckBox chkNotification;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkNotify;
     }
 }
 

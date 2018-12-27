@@ -11,7 +11,6 @@ namespace AutoCTRL_S
     {
         private NotifyIcon trayIcon;
         public System.Timers.Timer saveTimer;
-        public Boolean checkSound = false;
 
         public SaveManager()
         {
@@ -50,23 +49,22 @@ namespace AutoCTRL_S
             saveTimer.Start();
         }
 
-        private void chkNotification_CheckedChanged(object sender, EventArgs e)
-        {
-            checkSound = true;
-        }
-
         private void saveTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             SendKeys.SendWait("^(s)");
 
-            if (checkSound) {System.Media.SystemSounds.Exclamation.Play();}
-            else {}
+            if (chkNotify.Checked)
+            {
+                trayIcon.BalloonTipText = "Autosave Successful";
+                trayIcon.ShowBalloonTip(100);
+            }
+
+            if (chkNotification.Checked) {System.Media.SystemSounds.Exclamation.Play();}
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             trayIcon.BalloonTipTitle = "AutoCTRL+S";
-            trayIcon.BalloonTipText = "Minimized To System Tray";
             trayIcon.Text = "AutoCTRL+S";
 
             //this.WindowState = FormWindowState.Minimized;
@@ -99,10 +97,10 @@ namespace AutoCTRL_S
             RegistryKey rk = Registry.CurrentUser.OpenSubKey
                 ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-            if (chkStartUp.Checked)
-                rk.SetValue("AutoCTRL+S", Application.ExecutablePath);
-            else
-                rk.DeleteValue("AutoCTRL+S", false);
+            //if (chkStartUp.Checked)
+            //    rk.SetValue("AutoCTRL+S", Application.ExecutablePath);
+            //else
+            //    rk.DeleteValue("AutoCTRL+S", false);
         }
 
         private void chkStartUp_CheckedChanged(object sender, EventArgs e)
@@ -129,6 +127,7 @@ namespace AutoCTRL_S
             {
                 this.Hide();
                 trayIcon.Visible = true;
+                trayIcon.BalloonTipText = "Minimized To System Tray";
                 trayIcon.ShowBalloonTip(100);
             }
             else if (FormWindowState.Normal == this.WindowState)
