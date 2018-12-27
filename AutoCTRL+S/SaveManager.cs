@@ -87,15 +87,13 @@ namespace AutoCTRL_S
 
         private void SaveManager_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-            e.Cancel = true;
-            startSaveTimer();
+            trayIcon.Visible = false;
         }
 
         private void SetStartup()
         {
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey
-                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            //RegistryKey rk = Registry.CurrentUser.OpenSubKey
+            //    ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
             //if (chkStartUp.Checked)
             //    rk.SetValue("AutoCTRL+S", Application.ExecutablePath);
@@ -105,7 +103,6 @@ namespace AutoCTRL_S
 
         private void chkStartUp_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
