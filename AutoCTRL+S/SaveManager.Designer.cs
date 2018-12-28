@@ -77,11 +77,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 162);
+            this.label2.Location = new System.Drawing.Point(31, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
+            this.label2.Size = new System.Drawing.Size(154, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Moradi Software Solutions";
+            this.label2.Text = "© Moradi Software Solutions ©";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // chkNotification
@@ -98,7 +98,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::AutoCTRL_S.Properties.Resources.GitHub1;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 125);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 125);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -121,11 +121,11 @@
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(79, 130);
+            this.label3.Location = new System.Drawing.Point(63, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 15);
+            this.label3.Size = new System.Drawing.Size(121, 15);
             this.label3.TabIndex = 8;
-            this.label3.Text = "View On GitHub";
+            this.label3.Text = "View On GitHub ®";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // chkNotify
@@ -157,6 +157,7 @@
             this.MinimizeBox = false;
             this.Name = "SaveManager";
             this.Text = "AutoCTRL+S Settings";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SaveManager_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.SaveManager_Resize);
