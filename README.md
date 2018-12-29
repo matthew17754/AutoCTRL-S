@@ -6,6 +6,6 @@ So now you're frusturated. That's understandable. It's a real shame that BSOD go
 
 You've submitted a bug report to Microsoft® and/or other software vendors resposible. Pats on the back to you. But now what?
 
-You could go back to work on your quality revolutionary masterpiece, hoping and praying that the software companies did their job right, and that you remember to hit CTRL+S. But can we humans really count on that? I think we all know the right answer here.
+You could go back to work on your revolutionary masterpiece, hoping and praying that the software companies did their job right, and that you remember to hit CTRL+S. But can we humans really count on that? I think we all know the right answer here.
 
-The right answer would be to download AutoCTRL+S, a utility that _saves your work for you automatically_ with nothing more on your part than a double click. Just give that download button a click on the release page and in seconds you'll _probably_ never have to lose another revolutionary masterpiece again. 
+The right answer would be to download AutoCTRL+S, a utility that _saves your work for you automatically_ with nothing more on your part than a double click. Just smash that [download](https://github.com/matthew17754/AutoCTRL-S/releases/download/v1.0/AutoCTRL+S.exe) button on the release page and in seconds you'll _probably_ never have to lose another revolutionary masterpiece again. 
